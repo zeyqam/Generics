@@ -68,23 +68,44 @@ using Generics;
 //    Console.WriteLine(item.Name);
 //}
 
-DataList<int> dataList = new DataList<int>();
-dataList.Add(10);
-dataList.Add(20);
-dataList.Add(25);
+//DataList<int> dataList = new DataList<int>();
+//dataList.Add(10);
+//dataList.Add(20);
+//dataList.Add(25);
 
-bool result=dataList.Delete(20);
+//bool result=dataList.Delete(20);
 
-if (result)
+//if (result)
+//{
+//    Console.WriteLine("20 successfuly removed");
+//}
+//else
+//{
+//    Console.WriteLine("20 not found");
+//}
+//int[] alldata=dataList.GetAll();
+//Console.WriteLine("All Data:");
+//foreach (int data in alldata)
+//{
+//    Console.WriteLine(data);
+//}
+ DataList<int> dataList= new DataList<int>();   
+
+dataList.Add(3);
+
+dataList.Add(2);
+dataList.Add(5);
+bool removed=dataList.Remove(2);
+if (removed)
 {
-    Console.WriteLine("20 successfuly removed");
+    Console.WriteLine("Data successefuly removed");
 }
 else
 {
-    Console.WriteLine("20 not found");
+    Console.WriteLine("Data not found");
 }
 int[] alldata=dataList.GetAll();
-Console.WriteLine("All Data:");
+Console.WriteLine("All data:");
 foreach (int data in alldata)
 {
     Console.WriteLine(data);

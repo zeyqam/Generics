@@ -40,6 +40,21 @@ namespace Generics
             }
             return false;
         }
+        public bool Remove(T data)
+        {
+            int index=Array.IndexOf(_datas,data);  
+            if (index == -1)
+            {
+                return false;
+            }
+            for(int i=index; i < _datas.Length-1; i++)
+            {
+                _datas[i] = _datas[i + 1];
+            }
+            Array.Resize(ref _datas,_datas.Length - 1);
+            return true;
+            
+        }
 
 
 
