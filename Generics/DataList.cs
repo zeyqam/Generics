@@ -17,11 +17,39 @@ namespace Generics
         public void Add(T data)
         {
             Array.Resize(ref _datas, _datas.Length + 1);
-            _datas[_datas .Length - 1] = data;
+            _datas[_datas.Length - 1] = data;
         }
         public T[] GetAll()
         {
             return _datas;
         }
+
+        public bool Delete(T data)
+        {
+            for (int i = 0; i < _datas.Length; i++)
+            {
+                if (_datas[i].Equals(data))
+                {
+                    for (int j = i; j < _datas.Length - 1; j++)
+                    {
+                        _datas[j] = _datas[j + 1];
+                    }
+                    Array.Resize(ref _datas, _datas.Length - 1);
+                    return true;
+                }
+            }
+            return false;
+        }
+
+
+
+
+
+
+
+
+
+
+
     }
 }

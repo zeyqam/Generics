@@ -58,12 +58,34 @@ using Generics;
 //{
 //    Console.WriteLine(item);
 //}
-DataList<Book> books=new DataList<Book>();
-books.Add(new Book { Id=1,Name="test1"});
-books.Add(new Book { Id=2,Name="test2"});
-books.Add(new Book { Id=3,Name="test3"});
-var result=books.GetAll();
-foreach (var item in result)
+//DataList<Book> books=new DataList<Book>();
+//books.Add(new Book { Id=1,Name="test1"});
+//books.Add(new Book { Id=2,Name="test2"});
+//books.Add(new Book { Id=3,Name="test3"});
+//var result=books.GetAll();
+//foreach (var item in result)
+//{
+//    Console.WriteLine(item.Name);
+//}
+
+DataList<int> dataList = new DataList<int>();
+dataList.Add(10);
+dataList.Add(20);
+dataList.Add(25);
+
+bool result=dataList.Delete(20);
+
+if (result)
 {
-    Console.WriteLine(item.Name);
+    Console.WriteLine("20 successfuly removed");
+}
+else
+{
+    Console.WriteLine("20 not found");
+}
+int[] alldata=dataList.GetAll();
+Console.WriteLine("All Data:");
+foreach (int data in alldata)
+{
+    Console.WriteLine(data);
 }
